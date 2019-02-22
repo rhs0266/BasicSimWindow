@@ -7,7 +7,7 @@
 
 #include "GLUTWindow.hpp"
 #include "Camera.hpp"
-#include "GLfunctions.hpp"
+#include "GLPrimitiveFunctions.hpp"
 #include "dart/simulation/simulation.hpp"
 
 class SimWindow : public GUI::GLUTWindow{
