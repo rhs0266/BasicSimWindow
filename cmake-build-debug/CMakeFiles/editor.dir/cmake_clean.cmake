@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/editor.dir/main.cpp.o"
   "CMakeFiles/editor.dir/render/Camera.cpp.o"
+  "CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.o"
+  "CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o"
   "CMakeFiles/editor.dir/render/GLUTWindow.cpp.o"
-  "CMakeFiles/editor.dir/render/GLfunctions.cpp.o"
   "CMakeFiles/editor.dir/render/SimWindow.cpp.o"
   "editor.pdb"
   "editor"

@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/rhs0266/Installation/clion-2018.3.3/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/rhs0266/Installation/clion-2018.3.3/bin/cmake/linux/bin/cmake -E remove -f
+RM = /home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rhs0266/workspace/skelgen_renewal
+CMAKE_SOURCE_DIR = /home/ryu/workspace/BasicSimWindow
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ryu/workspace/BasicSimWindow/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/rhs0266/Installation/clion-2018.3.3/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/rhs0266/Installation/clion-2018.3.3/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,6 +177,60 @@ render/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/Camera.cpp.s
 .PHONY : render/Camera.cpp.s
 
+render/GLComplexFunctions.o: render/GLComplexFunctions.cpp.o
+
+.PHONY : render/GLComplexFunctions.o
+
+# target to build an object file
+render/GLComplexFunctions.cpp.o:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.o
+.PHONY : render/GLComplexFunctions.cpp.o
+
+render/GLComplexFunctions.i: render/GLComplexFunctions.cpp.i
+
+.PHONY : render/GLComplexFunctions.i
+
+# target to preprocess a source file
+render/GLComplexFunctions.cpp.i:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.i
+.PHONY : render/GLComplexFunctions.cpp.i
+
+render/GLComplexFunctions.s: render/GLComplexFunctions.cpp.s
+
+.PHONY : render/GLComplexFunctions.s
+
+# target to generate assembly for a file
+render/GLComplexFunctions.cpp.s:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.s
+.PHONY : render/GLComplexFunctions.cpp.s
+
+render/GLPrimitiveFunctions.o: render/GLPrimitiveFunctions.cpp.o
+
+.PHONY : render/GLPrimitiveFunctions.o
+
+# target to build an object file
+render/GLPrimitiveFunctions.cpp.o:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o
+.PHONY : render/GLPrimitiveFunctions.cpp.o
+
+render/GLPrimitiveFunctions.i: render/GLPrimitiveFunctions.cpp.i
+
+.PHONY : render/GLPrimitiveFunctions.i
+
+# target to preprocess a source file
+render/GLPrimitiveFunctions.cpp.i:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.i
+.PHONY : render/GLPrimitiveFunctions.cpp.i
+
+render/GLPrimitiveFunctions.s: render/GLPrimitiveFunctions.cpp.s
+
+.PHONY : render/GLPrimitiveFunctions.s
+
+# target to generate assembly for a file
+render/GLPrimitiveFunctions.cpp.s:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.s
+.PHONY : render/GLPrimitiveFunctions.cpp.s
+
 render/GLUTWindow.o: render/GLUTWindow.cpp.o
 
 .PHONY : render/GLUTWindow.o
@@ -203,33 +257,6 @@ render/GLUTWindow.s: render/GLUTWindow.cpp.s
 render/GLUTWindow.cpp.s:
 	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLUTWindow.cpp.s
 .PHONY : render/GLUTWindow.cpp.s
-
-render/GLfunctions.o: render/GLfunctions.cpp.o
-
-.PHONY : render/GLfunctions.o
-
-# target to build an object file
-render/GLfunctions.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLfunctions.cpp.o
-.PHONY : render/GLfunctions.cpp.o
-
-render/GLfunctions.i: render/GLfunctions.cpp.i
-
-.PHONY : render/GLfunctions.i
-
-# target to preprocess a source file
-render/GLfunctions.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLfunctions.cpp.i
-.PHONY : render/GLfunctions.cpp.i
-
-render/GLfunctions.s: render/GLfunctions.cpp.s
-
-.PHONY : render/GLfunctions.s
-
-# target to generate assembly for a file
-render/GLfunctions.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLfunctions.cpp.s
-.PHONY : render/GLfunctions.cpp.s
 
 render/SimWindow.o: render/SimWindow.cpp.o
 
@@ -273,12 +300,15 @@ help:
 	@echo "... render/Camera.o"
 	@echo "... render/Camera.i"
 	@echo "... render/Camera.s"
+	@echo "... render/GLComplexFunctions.o"
+	@echo "... render/GLComplexFunctions.i"
+	@echo "... render/GLComplexFunctions.s"
+	@echo "... render/GLPrimitiveFunctions.o"
+	@echo "... render/GLPrimitiveFunctions.i"
+	@echo "... render/GLPrimitiveFunctions.s"
 	@echo "... render/GLUTWindow.o"
 	@echo "... render/GLUTWindow.i"
 	@echo "... render/GLUTWindow.s"
-	@echo "... render/GLfunctions.o"
-	@echo "... render/GLfunctions.i"
-	@echo "... render/GLfunctions.s"
 	@echo "... render/SimWindow.o"
 	@echo "... render/SimWindow.i"
 	@echo "... render/SimWindow.s"

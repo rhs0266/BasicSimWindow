@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS = -g   -std=gnu++11 -Wdeprecated-declarations -DHAVE_CSTDDEF -std=c++11
 
-CXX_DEFINES = -DBOOST_TEST_DYN_LINK -DMSS_ROOT_DIR=\"/home/rhs0266/workspace/skelgen_renewal\"
+CXX_DEFINES = -DBOOST_TEST_DYN_LINK -DMSS_ROOT_DIR=\"/home/ryu/workspace/BasicSimWindow\"
 
-CXX_INCLUDES = -I/home/rhs0266/workspace/skelgen_renewal -isystem /usr/include/eigen3 -isystem /usr/local/include -isystem /usr/include/coin 
+CXX_INCLUDES = -I/home/ryu/workspace/BasicSimWindow -isystem /usr/include/eigen3 -isystem /usr/local/include -isystem /usr/include/coin 
 

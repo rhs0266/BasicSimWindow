@@ -4,18 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/rhs0266/workspace/skelgen_renewal/main.cpp" "/home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/editor.dir/main.cpp.o"
-  "/home/rhs0266/workspace/skelgen_renewal/render/Camera.cpp" "/home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/editor.dir/render/Camera.cpp.o"
-  "/home/rhs0266/workspace/skelgen_renewal/render/GLUTWindow.cpp" "/home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/editor.dir/render/GLUTWindow.cpp.o"
-  "/home/rhs0266/workspace/skelgen_renewal/render/GLfunctions.cpp" "/home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/editor.dir/render/GLfunctions.cpp.o"
-  "/home/rhs0266/workspace/skelgen_renewal/render/SimWindow.cpp" "/home/rhs0266/workspace/skelgen_renewal/cmake-build-debug/CMakeFiles/editor.dir/render/SimWindow.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/main.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/main.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/render/Camera.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/Camera.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/render/GLComplexFunctions.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/render/GLPrimitiveFunctions.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/render/GLUTWindow.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/GLUTWindow.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/render/SimWindow.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/SimWindow.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "BOOST_TEST_DYN_LINK"
-  "MSS_ROOT_DIR=\"/home/rhs0266/workspace/skelgen_renewal\""
+  "MSS_ROOT_DIR=\"/home/ryu/workspace/BasicSimWindow\""
   )
 
 # The include file search paths:

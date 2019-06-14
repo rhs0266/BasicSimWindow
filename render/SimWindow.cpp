@@ -43,6 +43,10 @@ void SimWindow::display() {
 }
 
 void SimWindow::keyboard(unsigned char key, int x, int y) {
+    switch(key){
+        case 27: exit(0);
+        default: break;
+    }
 	glutPostRedisplay();
 }
 

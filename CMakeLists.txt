@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
 add_compile_options(-std=gnu++11)
 add_compile_options(-Wdeprecated-declarations)
 project(editor)
@@ -40,6 +40,6 @@ file(GLOB srcs
 #        "APTOpt/*.h" "APTOpt/*.cpp")
         )
 
-add_executable(editor ${srcs} render/GLUTWindow.cpp render/GLUTWindow.hpp render/Camera.cpp render/Camera.hpp render/SimWindow.cpp render/SimWindow.hpp render/GLfunctions.cpp render/GLfunctions.hpp)
+add_executable(editor ${srcs} render/GLUTWindow.cpp render/GLUTWindow.hpp render/Camera.cpp render/Camera.hpp render/SimWindow.cpp render/SimWindow.hpp)
 
 target_link_libraries(editor ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${DART_LIBRARIES} /usr/lib/x86_64-linux-gnu/libtinyxml.so stdc++fs)

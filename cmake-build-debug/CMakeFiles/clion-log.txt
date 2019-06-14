@@ -1,5 +1,8 @@
-/home/rhs0266/Installation/clion-2018.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/rhs0266/workspace/skelgen_renewal
+/home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ryu/workspace/BasicSimWindow
+-- Found OpenMP_C: -fopenmp  
+-- Found OpenMP_CXX: -fopenmp  
+-- Found OpenMP: TRUE   
 -- Found DART: /usr/local/include  found components:  gui optimizer-ipopt dart 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/rhs0266/workspace/skelgen_renewal/cmake-build-debug
+-- Build files have been written to: /home/ryu/workspace/BasicSimWindow/cmake-build-debug
