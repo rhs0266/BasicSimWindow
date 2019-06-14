@@ -127,6 +127,18 @@
 		<Unit filename="/home/ryu/workspace/BasicSimWindow/render/SimWindow.hpp">
 			<Option target="editor"/>
 		</Unit>
+		<Unit filename="/home/ryu/workspace/BasicSimWindow/sim/Functions.cpp">
+			<Option target="editor"/>
+		</Unit>
+		<Unit filename="/home/ryu/workspace/BasicSimWindow/sim/Functions.h">
+			<Option target="editor"/>
+		</Unit>
+		<Unit filename="/home/ryu/workspace/BasicSimWindow/sim/SkeletonBuilder.cpp">
+			<Option target="editor"/>
+		</Unit>
+		<Unit filename="/home/ryu/workspace/BasicSimWindow/sim/SkeletonBuilder.h">
+			<Option target="editor"/>
+		</Unit>
 		<Unit filename="/home/ryu/workspace/BasicSimWindow/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

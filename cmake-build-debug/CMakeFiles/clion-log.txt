@@ -1,7 +1,4 @@
 /home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ryu/workspace/BasicSimWindow
--- Found OpenMP_C: -fopenmp  
--- Found OpenMP_CXX: -fopenmp  
--- Found OpenMP: TRUE   
 -- Found DART: /usr/local/include  found components:  gui optimizer-ipopt dart 
 -- Configuring done
 -- Generating done

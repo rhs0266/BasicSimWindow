@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ryu/workspace/BasicSimWindow/render/GLPrimitiveFunctions.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o"
   "/home/ryu/workspace/BasicSimWindow/render/GLUTWindow.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/GLUTWindow.cpp.o"
   "/home/ryu/workspace/BasicSimWindow/render/SimWindow.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/render/SimWindow.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/sim/Functions.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/sim/Functions.cpp.o"
+  "/home/ryu/workspace/BasicSimWindow/sim/SkeletonBuilder.cpp" "/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

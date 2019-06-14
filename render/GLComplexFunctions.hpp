@@ -19,16 +19,11 @@ const Eigen::Vector3d muscleWaypoint(153 / 255.0, 255 / 255.0, 205 / 255.0);
 }
 namespace GUI
 {
-/*
-void DrawSkeleton(
-		const dart::dynamics::SkeletonPtr& skel, std::map<std::string, int> name2ID,
-		const Eigen::Vector3d& color=Eigen::Vector3d(0.8,0.8,0.8), bool box = true);
 
 void DrawSkeleton(
 		const dart::dynamics::SkeletonPtr& skel,
 		const Eigen::Vector3d& color=Eigen::Vector3d(0.8,0.8,0.8), bool box = true);
 
-*/
 void DrawShape(const Eigen::Isometry3d& T,
                const dart::dynamics::Shape* shape,
                const Eigen::Vector3d& color);

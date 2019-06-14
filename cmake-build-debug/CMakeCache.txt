@@ -563,7 +563,7 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 DART_DEFINITIONS:INTERNAL=
 DART_INCLUDE_DIRS:INTERNAL=/usr/local/include
-DART_LIBRARIES:INTERNAL=dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart
+DART_LIBRARIES:INTERNAL=dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart
 //Boost min version requirement
 DART_MIN_BOOST_VERSION:INTERNAL=1.58.0
 DART_dart_DEFINITIONS:INTERNAL=
@@ -586,7 +586,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_ASSIMP:INTERNAL=[/usr/include][/usr/lib/x86_64-linu
 //Details about finding CCD
 FIND_PACKAGE_MESSAGE_DETAILS_CCD:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libccd.so][v2.0()]
 //Details about finding DART
-FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart][cfound components:  gui optimizer-ipopt dart ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart][cfound components:  gui optimizer-ipopt dart ][v()]
 //Details about finding FCL
 FIND_PACKAGE_MESSAGE_DETAILS_FCL:INTERNAL=[/usr/include][/usr/lib/libfcl.so][v0.3.2()]
 //Details about finding GLUT

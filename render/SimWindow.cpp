@@ -11,6 +11,8 @@
 #include <GL/glut.h>
 #include <GL/freeglut.h>
 #include <stdio.h>
+#include "sim/SkeletonBuilder.hpp"
+#include "GLComplexFunctions.hpp"
 
 using namespace std;
 using namespace Eigen;
@@ -23,6 +25,9 @@ SimWindow::SimWindow() : GLUTWindow(), mIsRotate(true), mIsDrag(false), mIsPlay(
 	mWorld->setGravity(Vector3d(0, -9.81, 0));
 	mWorld->setTime(1.0 / 1000.0);
 	mWorld->checkCollision();
+
+	SkeletonPtr skel = SkeletonBuilder::BuildFromFile("../character/box.xml");
+	mWorld->addSkeleton(skel);
 }
 
 SimWindow::~SimWindow() = default;
@@ -37,7 +42,9 @@ void SimWindow::display() {
 	glColor3f(0,0,0);
 
 	// Drawing in here.
-	GUI::drawStringOnScreen(0.5, 0.5, "initial", true, Vector3d(0,0,0));
+//	GUI::drawStringOnScreen(0.5, 0.5, "initial", true, Vector3d(0,0,0));
+
+    DrawSkeleton(mWorld->getSkeleton(0));
 
 	glutSwapBuffers();
 }

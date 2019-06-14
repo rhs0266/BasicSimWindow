@@ -14,11 +14,13 @@ include(FindOpenMP)
 find_package(Eigen3 REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)
+find_package(Boost 1.66.0 COMPONENTS filesystem python3 numpy3)
 
 include_directories(${EIGEN3_INCLUDE_DIR})
 include_directories(${OPENGL_INCLUDE_DIR})
 include_directories(${GLUT_INCLUDE_DIR})
 include_directories(${CMAKE_SOURCE_DIR})
+include_directories(${Boost_INCLUDE_DIRS})
 
 find_package(DART REQUIRED COMPONENTS gui optimizer-ipopt CONFIG)
 add_compile_options(-DHAVE_CSTDDEF)
@@ -32,6 +34,7 @@ file(GLOB srcs
 #        "generator/motionAdjust/*.h" "generator/motionAdjust/*.cpp"
 #        "model/*.h" "model/*.cpp"
         "render/*.hpp" "render/*.cpp"
+        "sim/*.hpp" "sim/*.cpp"
 #        "world/*.h" "world/*.cpp"
 #        "simpleMotion/*.h" "simpleMotion/*.cpp"
 #        "visualROM/*.h" "visualROM/*.cpp"
@@ -40,6 +43,6 @@ file(GLOB srcs
 #        "APTOpt/*.h" "APTOpt/*.cpp")
         )
 
-add_executable(editor ${srcs} render/GLUTWindow.cpp render/GLUTWindow.hpp render/Camera.cpp render/Camera.hpp render/SimWindow.cpp render/SimWindow.hpp)
+add_executable(editor ${srcs})
 
-target_link_libraries(editor ${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} ${DART_LIBRARIES} /usr/lib/x86_64-linux-gnu/libtinyxml.so stdc++fs)
+target_link_libraries(editor ${OPENGL_LIBRARIES} ${Boost_LIBRARIES} ${GLUT_LIBRARIES} ${DART_LIBRARIES} /usr/lib/x86_64-linux-gnu/libtinyxml.so stdc++fs)

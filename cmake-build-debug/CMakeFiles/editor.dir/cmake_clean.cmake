@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o"
   "CMakeFiles/editor.dir/render/GLUTWindow.cpp.o"
   "CMakeFiles/editor.dir/render/SimWindow.cpp.o"
+  "CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.o"
+  "CMakeFiles/editor.dir/sim/Functions.cpp.o"
   "editor.pdb"
   "editor"
 )

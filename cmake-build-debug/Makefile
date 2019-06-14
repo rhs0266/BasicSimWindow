@@ -285,6 +285,60 @@ render/SimWindow.cpp.s:
 	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/SimWindow.cpp.s
 .PHONY : render/SimWindow.cpp.s
 
+sim/Functions.o: sim/Functions.cpp.o
+
+.PHONY : sim/Functions.o
+
+# target to build an object file
+sim/Functions.cpp.o:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.o
+.PHONY : sim/Functions.cpp.o
+
+sim/Functions.i: sim/Functions.cpp.i
+
+.PHONY : sim/Functions.i
+
+# target to preprocess a source file
+sim/Functions.cpp.i:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.i
+.PHONY : sim/Functions.cpp.i
+
+sim/Functions.s: sim/Functions.cpp.s
+
+.PHONY : sim/Functions.s
+
+# target to generate assembly for a file
+sim/Functions.cpp.s:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.s
+.PHONY : sim/Functions.cpp.s
+
+sim/SkeletonBuilder.o: sim/SkeletonBuilder.cpp.o
+
+.PHONY : sim/SkeletonBuilder.o
+
+# target to build an object file
+sim/SkeletonBuilder.cpp.o:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.o
+.PHONY : sim/SkeletonBuilder.cpp.o
+
+sim/SkeletonBuilder.i: sim/SkeletonBuilder.cpp.i
+
+.PHONY : sim/SkeletonBuilder.i
+
+# target to preprocess a source file
+sim/SkeletonBuilder.cpp.i:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.i
+.PHONY : sim/SkeletonBuilder.cpp.i
+
+sim/SkeletonBuilder.s: sim/SkeletonBuilder.cpp.s
+
+.PHONY : sim/SkeletonBuilder.s
+
+# target to generate assembly for a file
+sim/SkeletonBuilder.cpp.s:
+	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.s
+.PHONY : sim/SkeletonBuilder.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +366,12 @@ help:
 	@echo "... render/SimWindow.o"
 	@echo "... render/SimWindow.i"
 	@echo "... render/SimWindow.s"
+	@echo "... sim/Functions.o"
+	@echo "... sim/Functions.i"
+	@echo "... sim/Functions.s"
+	@echo "... sim/SkeletonBuilder.o"
+	@echo "... sim/SkeletonBuilder.i"
+	@echo "... sim/SkeletonBuilder.s"
 .PHONY : help
 
 
