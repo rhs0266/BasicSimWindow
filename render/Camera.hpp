@@ -20,6 +20,9 @@ public:
     /// Apply camera setting at window.
     void applySetting();
 
+    /// Pan camera.
+    void panCamera(int x,int y,int prev_x,int prev_y);
+
     /// Zoom camera.
     void zoomCamera(int x,int y, int prevX, int prevY);
 

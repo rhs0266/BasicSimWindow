@@ -37,6 +37,19 @@ void GUI::Camera::applySetting() {
 			  up[0], up[1], up[2]);
 }
 
+void GUI::Camera::panCamera(int x,int y,int prev_x,int prev_y)
+{
+    double delta = ((double)prev_y - (double)y)/15.0;
+    Eigen::Vector3d vec = (lookAt - eye);
+    double scale = vec.norm();
+    scale = std::max((scale - delta),1.0);
+    Eigen::Vector3d vd = (scale - delta) * (lookAt - eye).normalized();
+    // eye = eye + vd;
+    // lookAt = lookAt;// + vd;
+    eye = lookAt - vd;
+
+}
+
 void GUI::Camera::zoomCamera(int x, int y, int prevX, int prevY) {
 	double delta = prevY - y;
 	fovy += delta / 20.0;

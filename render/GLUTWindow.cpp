@@ -84,8 +84,8 @@ void GUI::GLUTWindow::initLights() {
     static float lmodel_ambient[]      = {0.2, 0.2,  0.2,  1.0};
     static float lmodel_twoside[]      = {GL_FALSE};
 
-    GLfloat position[] = {0.0, 1.0, 1.0, 0.0};
-    GLfloat position1[] = {0.0, 1.0, -1.0, 0.0};
+    GLfloat position[] = {0.0, 5.0, 1.0, 0.0};
+//    GLfloat position1[] = {0.0, 5.0, -1.0, 0.0};
 
     // Light0
     glEnable(GL_LIGHT0);
@@ -97,9 +97,10 @@ void GUI::GLUTWindow::initLights() {
     glLightModelfv(GL_LIGHT_MODEL_TWO_SIDE, lmodel_twoside);
 
     // Light1
-    glEnable(GL_LIGHT1);
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse);
-    glLightfv(GL_LIGHT1, GL_POSITION, position1);
+//    glEnable(GL_LIGHT1);
+//    glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse);
+//    glLightfv(GL_LIGHT1, GL_POSITION, position1);
+
     glEnable(GL_LIGHTING);
     glEnable(GL_COLOR_MATERIAL);
 

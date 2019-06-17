@@ -26,8 +26,8 @@ SimWindow::SimWindow() : GLUTWindow(), mIsRotate(true), mIsDrag(false), mIsPlay(
 	mWorld->setTime(1.0 / 1000.0);
 	mWorld->checkCollision();
 
-	SkeletonPtr skel = SkeletonBuilder::BuildFromFile("../character/box.xml");
-	mWorld->addSkeleton(skel);
+	mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/box.xml"));
+    mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/ground.xml"));
 }
 
 SimWindow::~SimWindow() = default;
@@ -38,13 +38,17 @@ void SimWindow::display() {
 	glEnable(GL_DEPTH_TEST);
 	initLights();
 	mCamera->applySetting();
-	glDisable(GL_LIGHTING);
-	glColor3f(0,0,0);
+
+    glEnable(GL_BLEND);
+
+//	glDisable(GL_LIGHTING);
+//	glColor3f(0,0,0);
 
 	// Drawing in here.
 //	GUI::drawStringOnScreen(0.5, 0.5, "initial", true, Vector3d(0,0,0));
 
-    DrawSkeleton(mWorld->getSkeleton(0));
+    DrawSkeleton(mWorld->getSkeleton(0), Vector3d(0.5, 1.0, 0.2));
+    DrawSkeleton(mWorld->getSkeleton(1));
 
 	glutSwapBuffers();
 }
@@ -58,11 +62,58 @@ void SimWindow::keyboard(unsigned char key, int x, int y) {
 }
 
 void SimWindow::mouse(int button, int state, int x, int y) {
-	glutPostRedisplay();
+    if(button == 3 || button == 4){
+        if (button == 3)
+        {
+            mCamera->panCamera(0,-5,0,0);
+        }
+        else
+        {
+            mCamera->panCamera(0,5,0,0);
+        }
+    }
+    else{
+        if (state == GLUT_DOWN)
+        {
+            mIsDrag = true;
+            mMouseType = button;
+            mPrevX = x;
+            mPrevY = y;
+        }
+        else
+        {
+            mIsDrag = false;
+            mMouseType = 0;
+        }
+    }
 }
 
 void SimWindow::motion(int x, int y) {
-	glutPostRedisplay();
+    if (!mIsDrag)
+        return;
+
+    int mod = glutGetModifiers();
+    if (mMouseType == GLUT_LEFT_BUTTON)
+    {
+        // if(!mIsRotate)
+        mCamera->translateCamera(x,y,mPrevX,mPrevY);
+        // else
+        // 	mCamera->Rotate(x,y,mPrevX,mPrevY);
+    }
+    else if (mMouseType == GLUT_RIGHT_BUTTON)
+    {
+        mCamera->rotateCamera(x,y,mPrevX,mPrevY);
+        // switch (mod)
+        // {
+        // case GLUT_ACTIVE_SHIFT:
+        // 	mCamera->Zoom(x,y,mPrevX,mPrevY); break;
+        // default:
+        // 	mCamera->Pan(x,y,mPrevX,mPrevY); break;
+        // }
+
+    }
+    mPrevX = x;
+    mPrevY = y;
 }
 
 void SimWindow::reshape(int w, int h) {
@@ -71,6 +122,7 @@ void SimWindow::reshape(int w, int h) {
 }
 
 void SimWindow::timer(int value) {
+    mWorld->step();
 	glutPostRedisplay();
 	glutTimerFunc(mDisplayTimeout, timerEvent, 1);
 }

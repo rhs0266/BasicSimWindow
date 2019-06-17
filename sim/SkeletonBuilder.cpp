@@ -42,14 +42,15 @@ dart::dynamics::SkeletonPtr SkeletonBuilder::BuildFromFile(const std::string &fi
             bodyPos.linear() = string_to_matrix3d(bodyPosElem->Attribute("linear"));
         if (bodyPosElem->Attribute("translation") != nullptr)
             bodyPos.translation() = string_to_vector3d(bodyPosElem->Attribute("translation"));
+        bodyPos = Orthonormalize(bodyPos);
 
         TiXmlElement *jointPosElem = jointElem->FirstChildElement("JointPosition");
         Isometry3d jointPos;
         jointPos.setIdentity();
         if (jointPosElem->Attribute("linear") != nullptr)
-            jointPos.linear() = string_to_matrix3d(bodyPosElem->Attribute("linear"));
+            jointPos.linear() = string_to_matrix3d(jointPosElem->Attribute("linear"));
         if (jointPosElem->Attribute("translation") != nullptr)
-            jointPos.translation() = string_to_vector3d(bodyPosElem->Attribute("translation"));
+            jointPos.translation() = string_to_vector3d(jointPosElem->Attribute("translation"));
         jointPos = Orthonormalize(jointPos);
 
         double mass = atof(jointElem->Attribute("mass"));
@@ -71,6 +72,8 @@ dart::dynamics::SkeletonPtr SkeletonBuilder::BuildFromFile(const std::string &fi
 
     }
 
+    doc.Clear();
+
     return skel;
 }
 
@@ -91,6 +94,8 @@ dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType,
     inertia.setMoment(shape->computeInertia(mass));
 
     BodyNode *bn;
+
+    cout << size << endl;
 
     if (jointType == JOINT_TYPE::Free) {
         FreeJoint::Properties props;
@@ -120,14 +125,16 @@ dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType,
         props.mAxis = axis;
         props.mT_ChildBodyToJoint = bodyPosition.inverse() * jointPosition;
         props.mT_ParentBodyToJoint = parent->getTransform().inverse() * jointPosition;
-        bn = targetSkel->createJointAndBodyNodePair<RevoluteJoint>(parent, props,
+        bn = targetSkel->createJointAndBodyNodePair<PrismaticJoint>(parent, props,
                                                                    BodyNode::AspectProperties(bodyName)).second;
     }else if (jointType == JOINT_TYPE::Weld){
-        BallJoint::Properties props;
+        WeldJoint::Properties props;
         props.mName = bodyName;
         props.mT_ChildBodyToJoint = bodyPosition.inverse() * jointPosition;
-        props.mT_ParentBodyToJoint = parent->getTransform().inverse() * jointPosition;
-        bn = targetSkel->createJointAndBodyNodePair<BallJoint>(parent, props,
+        cout << bodyPosition.inverse() * jointPosition * Vector3d(0,0,0) << endl;
+        if (parent != nullptr)
+            props.mT_ParentBodyToJoint = parent->getTransform().inverse() * jointPosition;
+        bn = targetSkel->createJointAndBodyNodePair<WeldJoint>(parent, props,
                                                                BodyNode::AspectProperties(bodyName)).second;
     }
 
