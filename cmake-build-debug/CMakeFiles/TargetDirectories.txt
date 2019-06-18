@@ -1,3 +1,8 @@
 /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/editor.dir
 /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/sim/CMakeFiles/rebuild_cache.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/sim/CMakeFiles/sim.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/sim/CMakeFiles/edit_cache.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/render/CMakeFiles/rebuild_cache.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/render/CMakeFiles/render.dir
+/home/ryu/workspace/BasicSimWindow/cmake-build-debug/render/CMakeFiles/edit_cache.dir

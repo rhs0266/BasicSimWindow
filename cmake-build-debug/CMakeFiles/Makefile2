@@ -65,39 +65,112 @@ CMAKE_SOURCE_DIR = /home/ryu/workspace/BasicSimWindow
 CMAKE_BINARY_DIR = /home/ryu/workspace/BasicSimWindow/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/editor.dir
+# Directory level rules for directory sim
+
+# Convenience name for "all" pass in the directory.
+sim/all: sim/CMakeFiles/sim.dir/all
+
+.PHONY : sim/all
+
+# Convenience name for "clean" pass in the directory.
+sim/clean: sim/CMakeFiles/sim.dir/clean
+
+.PHONY : sim/clean
+
+# Convenience name for "preinstall" pass in the directory.
+sim/preinstall:
+
+.PHONY : sim/preinstall
+
+#=============================================================================
+# Target rules for target sim/CMakeFiles/sim.dir
 
 # All Build rule for target.
-CMakeFiles/editor.dir/all:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/depend
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target editor"
-.PHONY : CMakeFiles/editor.dir/all
+sim/CMakeFiles/sim.dir/all:
+	$(MAKE) -f sim/CMakeFiles/sim.dir/build.make sim/CMakeFiles/sim.dir/depend
+	$(MAKE) -f sim/CMakeFiles/sim.dir/build.make sim/CMakeFiles/sim.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles --progress-num=8,9,10 "Built target sim"
+.PHONY : sim/CMakeFiles/sim.dir/all
 
 # Include target in all.
-all: CMakeFiles/editor.dir/all
+all: sim/CMakeFiles/sim.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/editor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/editor.dir/all
+sim/CMakeFiles/sim.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 sim/CMakeFiles/sim.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/editor.dir/rule
+.PHONY : sim/CMakeFiles/sim.dir/rule
 
 # Convenience name for target.
-editor: CMakeFiles/editor.dir/rule
+sim: sim/CMakeFiles/sim.dir/rule
 
-.PHONY : editor
-
-# clean rule for target.
-CMakeFiles/editor.dir/clean:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/clean
-.PHONY : CMakeFiles/editor.dir/clean
+.PHONY : sim
 
 # clean rule for target.
-clean: CMakeFiles/editor.dir/clean
+sim/CMakeFiles/sim.dir/clean:
+	$(MAKE) -f sim/CMakeFiles/sim.dir/build.make sim/CMakeFiles/sim.dir/clean
+.PHONY : sim/CMakeFiles/sim.dir/clean
+
+# clean rule for target.
+clean: sim/CMakeFiles/sim.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory render
+
+# Convenience name for "all" pass in the directory.
+render/all: render/CMakeFiles/render.dir/all
+
+.PHONY : render/all
+
+# Convenience name for "clean" pass in the directory.
+render/clean: render/CMakeFiles/render.dir/clean
+
+.PHONY : render/clean
+
+# Convenience name for "preinstall" pass in the directory.
+render/preinstall:
+
+.PHONY : render/preinstall
+
+#=============================================================================
+# Target rules for target render/CMakeFiles/render.dir
+
+# All Build rule for target.
+render/CMakeFiles/render.dir/all: sim/CMakeFiles/sim.dir/all
+	$(MAKE) -f render/CMakeFiles/render.dir/build.make render/CMakeFiles/render.dir/depend
+	$(MAKE) -f render/CMakeFiles/render.dir/build.make render/CMakeFiles/render.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target render"
+.PHONY : render/CMakeFiles/render.dir/all
+
+# Include target in all.
+all: render/CMakeFiles/render.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+render/CMakeFiles/render.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 render/CMakeFiles/render.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ryu/workspace/BasicSimWindow/cmake-build-debug/CMakeFiles 0
+.PHONY : render/CMakeFiles/render.dir/rule
+
+# Convenience name for target.
+render: render/CMakeFiles/render.dir/rule
+
+.PHONY : render
+
+# clean rule for target.
+render/CMakeFiles/render.dir/clean:
+	$(MAKE) -f render/CMakeFiles/render.dir/build.make render/CMakeFiles/render.dir/clean
+.PHONY : render/CMakeFiles/render.dir/clean
+
+# clean rule for target.
+clean: render/CMakeFiles/render.dir/clean
 
 .PHONY : clean
 

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <GL/glut.h>
 
-#include "render/SimWindow.hpp"
+#include "SimWindow.hpp"
 
 using namespace std;
 

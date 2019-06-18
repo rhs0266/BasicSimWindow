@@ -11,7 +11,7 @@
 #include <GL/glut.h>
 #include <GL/freeglut.h>
 #include <stdio.h>
-#include "sim/SkeletonBuilder.hpp"
+#include "../sim/SkeletonBuilder.hpp"
 #include "GLComplexFunctions.hpp"
 
 using namespace std;
@@ -40,12 +40,6 @@ void SimWindow::display() {
 	mCamera->applySetting();
 
     glEnable(GL_BLEND);
-
-//	glDisable(GL_LIGHTING);
-//	glColor3f(0,0,0);
-
-	// Drawing in here.
-//	GUI::drawStringOnScreen(0.5, 0.5, "initial", true, Vector3d(0,0,0));
 
     DrawSkeleton(mWorld->getSkeleton(0), Vector3d(0.5, 1.0, 0.2));
     DrawSkeleton(mWorld->getSkeleton(1));
@@ -95,21 +89,11 @@ void SimWindow::motion(int x, int y) {
     int mod = glutGetModifiers();
     if (mMouseType == GLUT_LEFT_BUTTON)
     {
-        // if(!mIsRotate)
         mCamera->translateCamera(x,y,mPrevX,mPrevY);
-        // else
-        // 	mCamera->Rotate(x,y,mPrevX,mPrevY);
     }
     else if (mMouseType == GLUT_RIGHT_BUTTON)
     {
         mCamera->rotateCamera(x,y,mPrevX,mPrevY);
-        // switch (mod)
-        // {
-        // case GLUT_ACTIVE_SHIFT:
-        // 	mCamera->Zoom(x,y,mPrevX,mPrevY); break;
-        // default:
-        // 	mCamera->Pan(x,y,mPrevX,mPrevY); break;
-        // }
 
     }
     mPrevX = x;

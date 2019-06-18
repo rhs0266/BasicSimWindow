@@ -1,5 +1,6 @@
 /home/ryu/Downloads/clion-2019.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ryu/workspace/BasicSimWindow
--- Found DART: /usr/local/include  found components:  gui optimizer-ipopt dart 
+-- Found DART: /usr/local/include  found components:  gui optimizer-ipopt collision-bullet collision-ode dart 
+-- Boost version: 1.66.0
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/ryu/workspace/BasicSimWindow/cmake-build-debug

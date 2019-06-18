@@ -111,233 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named editor
+# Target rules for targets named sim
 
 # Build rule for target.
-editor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 editor
-.PHONY : editor
+sim: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sim
+.PHONY : sim
 
 # fast build rule for target.
-editor/fast:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/build
-.PHONY : editor/fast
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-render/Camera.o: render/Camera.cpp.o
-
-.PHONY : render/Camera.o
-
-# target to build an object file
-render/Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/Camera.cpp.o
-.PHONY : render/Camera.cpp.o
-
-render/Camera.i: render/Camera.cpp.i
-
-.PHONY : render/Camera.i
-
-# target to preprocess a source file
-render/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/Camera.cpp.i
-.PHONY : render/Camera.cpp.i
-
-render/Camera.s: render/Camera.cpp.s
-
-.PHONY : render/Camera.s
-
-# target to generate assembly for a file
-render/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/Camera.cpp.s
-.PHONY : render/Camera.cpp.s
-
-render/GLComplexFunctions.o: render/GLComplexFunctions.cpp.o
-
-.PHONY : render/GLComplexFunctions.o
-
-# target to build an object file
-render/GLComplexFunctions.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.o
-.PHONY : render/GLComplexFunctions.cpp.o
-
-render/GLComplexFunctions.i: render/GLComplexFunctions.cpp.i
-
-.PHONY : render/GLComplexFunctions.i
-
-# target to preprocess a source file
-render/GLComplexFunctions.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.i
-.PHONY : render/GLComplexFunctions.cpp.i
-
-render/GLComplexFunctions.s: render/GLComplexFunctions.cpp.s
-
-.PHONY : render/GLComplexFunctions.s
-
-# target to generate assembly for a file
-render/GLComplexFunctions.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLComplexFunctions.cpp.s
-.PHONY : render/GLComplexFunctions.cpp.s
-
-render/GLPrimitiveFunctions.o: render/GLPrimitiveFunctions.cpp.o
-
-.PHONY : render/GLPrimitiveFunctions.o
-
-# target to build an object file
-render/GLPrimitiveFunctions.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.o
-.PHONY : render/GLPrimitiveFunctions.cpp.o
-
-render/GLPrimitiveFunctions.i: render/GLPrimitiveFunctions.cpp.i
-
-.PHONY : render/GLPrimitiveFunctions.i
-
-# target to preprocess a source file
-render/GLPrimitiveFunctions.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.i
-.PHONY : render/GLPrimitiveFunctions.cpp.i
-
-render/GLPrimitiveFunctions.s: render/GLPrimitiveFunctions.cpp.s
-
-.PHONY : render/GLPrimitiveFunctions.s
-
-# target to generate assembly for a file
-render/GLPrimitiveFunctions.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLPrimitiveFunctions.cpp.s
-.PHONY : render/GLPrimitiveFunctions.cpp.s
-
-render/GLUTWindow.o: render/GLUTWindow.cpp.o
-
-.PHONY : render/GLUTWindow.o
-
-# target to build an object file
-render/GLUTWindow.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLUTWindow.cpp.o
-.PHONY : render/GLUTWindow.cpp.o
-
-render/GLUTWindow.i: render/GLUTWindow.cpp.i
-
-.PHONY : render/GLUTWindow.i
-
-# target to preprocess a source file
-render/GLUTWindow.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLUTWindow.cpp.i
-.PHONY : render/GLUTWindow.cpp.i
-
-render/GLUTWindow.s: render/GLUTWindow.cpp.s
-
-.PHONY : render/GLUTWindow.s
-
-# target to generate assembly for a file
-render/GLUTWindow.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/GLUTWindow.cpp.s
-.PHONY : render/GLUTWindow.cpp.s
-
-render/SimWindow.o: render/SimWindow.cpp.o
-
-.PHONY : render/SimWindow.o
-
-# target to build an object file
-render/SimWindow.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/SimWindow.cpp.o
-.PHONY : render/SimWindow.cpp.o
-
-render/SimWindow.i: render/SimWindow.cpp.i
-
-.PHONY : render/SimWindow.i
-
-# target to preprocess a source file
-render/SimWindow.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/SimWindow.cpp.i
-.PHONY : render/SimWindow.cpp.i
-
-render/SimWindow.s: render/SimWindow.cpp.s
-
-.PHONY : render/SimWindow.s
-
-# target to generate assembly for a file
-render/SimWindow.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/render/SimWindow.cpp.s
-.PHONY : render/SimWindow.cpp.s
-
-sim/Functions.o: sim/Functions.cpp.o
-
-.PHONY : sim/Functions.o
-
-# target to build an object file
-sim/Functions.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.o
-.PHONY : sim/Functions.cpp.o
-
-sim/Functions.i: sim/Functions.cpp.i
-
-.PHONY : sim/Functions.i
-
-# target to preprocess a source file
-sim/Functions.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.i
-.PHONY : sim/Functions.cpp.i
-
-sim/Functions.s: sim/Functions.cpp.s
-
-.PHONY : sim/Functions.s
-
-# target to generate assembly for a file
-sim/Functions.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/Functions.cpp.s
-.PHONY : sim/Functions.cpp.s
-
-sim/SkeletonBuilder.o: sim/SkeletonBuilder.cpp.o
-
-.PHONY : sim/SkeletonBuilder.o
-
-# target to build an object file
-sim/SkeletonBuilder.cpp.o:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.o
-.PHONY : sim/SkeletonBuilder.cpp.o
-
-sim/SkeletonBuilder.i: sim/SkeletonBuilder.cpp.i
-
-.PHONY : sim/SkeletonBuilder.i
-
-# target to preprocess a source file
-sim/SkeletonBuilder.cpp.i:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.i
-.PHONY : sim/SkeletonBuilder.cpp.i
-
-sim/SkeletonBuilder.s: sim/SkeletonBuilder.cpp.s
-
-.PHONY : sim/SkeletonBuilder.s
-
-# target to generate assembly for a file
-sim/SkeletonBuilder.cpp.s:
-	$(MAKE) -f CMakeFiles/editor.dir/build.make CMakeFiles/editor.dir/sim/SkeletonBuilder.cpp.s
-.PHONY : sim/SkeletonBuilder.cpp.s
+sim/fast:
+	$(MAKE) -f sim/CMakeFiles/sim.dir/build.make sim/CMakeFiles/sim.dir/build
+.PHONY : sim/fast
+
+#=============================================================================
+# Target rules for targets named render
+
+# Build rule for target.
+render: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 render
+.PHONY : render
+
+# fast build rule for target.
+render/fast:
+	$(MAKE) -f render/CMakeFiles/render.dir/build.make render/CMakeFiles/render.dir/build
+.PHONY : render/fast
 
 # Help Target
 help:
@@ -346,32 +143,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... editor"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... render/Camera.o"
-	@echo "... render/Camera.i"
-	@echo "... render/Camera.s"
-	@echo "... render/GLComplexFunctions.o"
-	@echo "... render/GLComplexFunctions.i"
-	@echo "... render/GLComplexFunctions.s"
-	@echo "... render/GLPrimitiveFunctions.o"
-	@echo "... render/GLPrimitiveFunctions.i"
-	@echo "... render/GLPrimitiveFunctions.s"
-	@echo "... render/GLUTWindow.o"
-	@echo "... render/GLUTWindow.i"
-	@echo "... render/GLUTWindow.s"
-	@echo "... render/SimWindow.o"
-	@echo "... render/SimWindow.i"
-	@echo "... render/SimWindow.s"
-	@echo "... sim/Functions.o"
-	@echo "... sim/Functions.i"
-	@echo "... sim/Functions.s"
-	@echo "... sim/SkeletonBuilder.o"
-	@echo "... sim/SkeletonBuilder.i"
-	@echo "... sim/SkeletonBuilder.s"
+	@echo "... sim"
+	@echo "... render"
 .PHONY : help
 
 

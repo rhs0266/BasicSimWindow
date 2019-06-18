@@ -7,42 +7,24 @@ SET(CMAKE_BUILD_TYPE Release CACHE STRING
         "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
         # FORCE
         )
-add_definitions(-DMSS_ROOT_DIR="${CMAKE_HOME_DIRECTORY}")
+add_definitions(-DROOT_DIR="${CMAKE_HOME_DIRECTORY}")
 
-include(FindOpenMP)
+add_compile_options(-fPIC)
+add_compile_options(-std=gnu++11)
+add_compile_options(-Wdeprecated-declarations)
+add_compile_options(-lm)
 
-find_package(Eigen3 REQUIRED)
-find_package(OpenGL REQUIRED)
-find_package(GLUT REQUIRED)
-find_package(Boost 1.66.0 COMPONENTS filesystem python3 numpy3)
+add_definitions(-DDPHY_DIR="${CMAKE_HOME_DIRECTORY}")
+set(CMAKE_MODULE_PATH "${CMAKE_HOME_DIRECTORY}/cmake_module")
 
-include_directories(${EIGEN3_INCLUDE_DIR})
-include_directories(${OPENGL_INCLUDE_DIR})
-include_directories(${GLUT_INCLUDE_DIR})
-include_directories(${CMAKE_SOURCE_DIR})
-include_directories(${Boost_INCLUDE_DIRS})
+find_package(DART REQUIRED COMPONENTS gui optimizer-ipopt collision-bullet collision-ode CONFIG)
+find_package(Boost 1.66.0#[[ COMPONENTS filesystem python3 numpy3]])
+find_package(PythonLibs 3.5 REQUIRED)
+find_package(PythonInterp 3.5 REQUIRED)
+#find_package(TinyXML REQUIRED)
 
-find_package(DART REQUIRED COMPONENTS gui optimizer-ipopt CONFIG)
-add_compile_options(-DHAVE_CSTDDEF)
-include_directories(${DART_INCLUDE_DIRS})
-
-
-file(GLOB srcs
-        "main.cpp"
-#        "functions/*.h" "functions/*.cpp"
-#        "generator/*.h" "generator/*.cpp"
-#        "generator/motionAdjust/*.h" "generator/motionAdjust/*.cpp"
-#        "model/*.h" "model/*.cpp"
-        "render/*.hpp" "render/*.cpp"
-        "sim/*.hpp" "sim/*.cpp"
-#        "world/*.h" "world/*.cpp"
-#        "simpleMotion/*.h" "simpleMotion/*.cpp"
-#        "visualROM/*.h" "visualROM/*.cpp"
-#        "editor/*.h" "editor/*.cpp"
-#        "romEditor/*.h" "romEditor/*.cpp"
-#        "APTOpt/*.h" "APTOpt/*.cpp")
-        )
-
-add_executable(editor ${srcs})
-
-target_link_libraries(editor ${OPENGL_LIBRARIES} ${Boost_LIBRARIES} ${GLUT_LIBRARIES} ${DART_LIBRARIES} /usr/lib/x86_64-linux-gnu/libtinyxml.so stdc++fs)
+add_subdirectory( sim )
+add_subdirectory( render )
+#add_subdirectory( interactive_render )
+#add_subdirectory( py_code )
+#add_subdirectory( unittest )
