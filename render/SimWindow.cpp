@@ -26,7 +26,7 @@ SimWindow::SimWindow() : GLUTWindow(), mIsRotate(true), mIsDrag(false), mIsPlay(
 	mWorld->setTime(1.0 / 1000.0);
 	mWorld->checkCollision();
 
-	mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/box.xml"));
+	mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/humanoid.xml"));
     mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/ground.xml"));
 }
 

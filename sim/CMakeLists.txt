@@ -18,5 +18,5 @@ include_directories(${Boost_INCLUDE_DIRS})
 
 file(GLOB srcs "*.hpp" "*.cpp")
 
-add_library(sim ${srcs} )
+add_library(sim ${srcs} BVH.cpp BVH.hpp)
 target_link_libraries(sim ${DART_LIBRARIES} ${Boost_LIBRARIES} #[[${TinyXML_LIBRARIES}]] ${PYTHON_LIBRARIES})
