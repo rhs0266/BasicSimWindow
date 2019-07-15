@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 add_compile_options(-std=gnu++11)
 add_compile_options(-Wdeprecated-declarations)
-project(editor)
+project(window)
 
 SET(CMAKE_BUILD_TYPE Release CACHE STRING
         "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."

@@ -201,7 +201,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=editor
+CMAKE_PROJECT_NAME:STATIC=window
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -443,10 +443,16 @@ render_SOURCE_DIR:STATIC=/home/ryu/workspace/BasicSimWindow/render
 sim_BINARY_DIR:STATIC=/home/ryu/workspace/BasicSimWindow/cmake-build-debug/sim
 
 //Dependencies for the target
-sim_LIB_DEPENDS:STATIC=general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart-collision-bullet;general;dart-collision-ode;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart-collision-bullet;general;dart-collision-ode;general;dart;general;/usr/lib/x86_64-linux-gnu/libpython3.5m.so;
+sim_LIB_DEPENDS:STATIC=general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart-collision-bullet;general;dart-collision-ode;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart-collision-bullet;general;dart-collision-ode;general;dart;general;dart-gui;general;dart-optimizer-ipopt;general;dart-collision-bullet;general;dart-collision-ode;general;dart;general;/usr/lib/x86_64-linux-gnu/libpython3.5m.so;
 
 //Value Computed by CMake
 sim_SOURCE_DIR:STATIC=/home/ryu/workspace/BasicSimWindow/sim
+
+//Value Computed by CMake
+window_BINARY_DIR:STATIC=/home/ryu/workspace/BasicSimWindow/cmake-build-debug
+
+//Value Computed by CMake
+window_SOURCE_DIR:STATIC=/home/ryu/workspace/BasicSimWindow
 
 
 ########################
@@ -624,7 +630,7 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 DART_DEFINITIONS:INTERNAL=
 DART_INCLUDE_DIRS:INTERNAL=/usr/local/include
-DART_LIBRARIES:INTERNAL=dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart
+DART_LIBRARIES:INTERNAL=dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart
 //Boost min version requirement
 DART_MIN_BOOST_VERSION:INTERNAL=1.58.0
 DART_collision-bullet_DEFINITIONS:INTERNAL=
@@ -657,7 +663,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_ASSIMP:INTERNAL=[/usr/include][/usr/lib/x86_64-linu
 //Details about finding CCD
 FIND_PACKAGE_MESSAGE_DETAILS_CCD:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libccd.so][v2.0()]
 //Details about finding DART
-FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart][cfound components:  gui optimizer-ipopt collision-bullet collision-ode dart ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_DART:INTERNAL=[/usr/local/include][dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart;dart-gui;dart-optimizer-ipopt;dart-collision-bullet;dart-collision-ode;dart][cfound components:  gui optimizer-ipopt collision-bullet collision-ode dart ][v()]
 //Details about finding FCL
 FIND_PACKAGE_MESSAGE_DETAILS_FCL:INTERNAL=[/usr/include][/usr/lib/libfcl.so][v0.3.2()]
 //Details about finding GLEW

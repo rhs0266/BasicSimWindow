@@ -78,14 +78,14 @@ dart::dynamics::SkeletonPtr SkeletonBuilder::BuildFromFile(const std::string &fi
 }
 
 dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType, const std::string &bodyName,
-                                                           const dart::dynamics::SkeletonPtr &targetSkel,
-                                                           dart::dynamics::BodyNode *const parent,
-                                                           const Eigen::Vector3d &size,
-                                                           const Eigen::Isometry3d &jointPosition,
-                                                           const Eigen::Isometry3d &bodyPosition,
-                                                           double mass,
-                                                           bool contact,
-                                                           const Eigen::Vector3d axis) {
+                                                     const dart::dynamics::SkeletonPtr &targetSkel,
+                                                     dart::dynamics::BodyNode *const parent,
+                                                     const Eigen::Vector3d &size,
+                                                     const Eigen::Isometry3d &jointPosition,
+                                                     const Eigen::Isometry3d &bodyPosition,
+                                                     double mass,
+                                                     bool contact,
+                                                     const Eigen::Vector3d axis) {
 
     ShapePtr shape = shared_ptr<BoxShape>(new BoxShape(size));
 
@@ -126,7 +126,7 @@ dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType,
         props.mT_ChildBodyToJoint = bodyPosition.inverse() * jointPosition;
         props.mT_ParentBodyToJoint = parent->getTransform().inverse() * jointPosition;
         bn = targetSkel->createJointAndBodyNodePair<PrismaticJoint>(parent, props,
-                                                                   BodyNode::AspectProperties(bodyName)).second;
+                                                                    BodyNode::AspectProperties(bodyName)).second;
     }else if (jointType == JOINT_TYPE::Weld){
         WeldJoint::Properties props;
         props.mName = bodyName;
