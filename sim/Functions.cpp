@@ -76,3 +76,14 @@ Eigen::Isometry3d Orthonormalize(const Eigen::Isometry3d& T_old)
     T.linear().col(2) = u2;
     return T;
 }
+double radianClamp(double input){
+    return fmod(input+M_PI, 2*M_PI) - M_PI;
+}
+
+Eigen::Quaterniond DARTPositionToQuaternion(Eigen::Vector3d in) {
+    return Eigen::Quaterniond();
+}
+
+Eigen::Vector3d QuaternionToDARTPosition(const Eigen::Quaterniond &in) {
+    return Eigen::Vector3d();
+}

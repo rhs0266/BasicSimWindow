@@ -42,7 +42,7 @@ double exp_of_squared(const Eigen::Vector3d& vec,double sigma = 1.0);
 double exp_of_squared(const Eigen::MatrixXd& mat,double sigma = 1.0);
 std::pair<int, double> maxCoeff(const Eigen::VectorXd& in);
 
-double RadianClamp(double input);
+double radianClamp(double input);
 
 Eigen::Quaterniond DARTPositionToQuaternion(Eigen::Vector3d in);
 Eigen::Vector3d QuaternionToDARTPosition(const Eigen::Quaterniond& in);
