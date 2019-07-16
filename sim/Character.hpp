@@ -46,25 +46,33 @@ public:
     /// Getter for SPD forces exert by skeleton.
     Eigen::VectorXd GetSPDForces(const Eigen::VectorXd& pDesired, const Eigen::VectorXd& vDesired);
 
-    /// Loding BVH mappign from BVH file.
-    void loadBVHMap(const std::string& BVHPath);
-
-    /// Initializing BVH.
-    void initBVH(BVH* bvh);
+    /// Loading BVH.
+    void loadBVH(const std::string& BVHPath);
 
     /// Getter for approximated positions and velocities from bvh file.
-    std::pair<Eigen::VectorXd, Eigen::VectorXd> getTargetPosAndVelFromBVH(BVH* bvh, double t);
+    std::pair<Eigen::VectorXd, Eigen::VectorXd> getTargetPosAndVelFromBVH(double t);
 
     /// Getter for approximated positions from bvh file.
-    Eigen::VectorXd getTargetPos(BVH* bvh, double t);
+    Eigen::VectorXd getTargetPos(double t);
+
+    /// Setter for following bvh file.
+    void followBVH(double t);
 
 protected:
     std::string mCharacterPath;
     dart::dynamics::SkeletonPtr mSkeleton;
 
+    BVH bvh;
     std::map<std::string, std::string> mBVHMap;
     Eigen::VectorXd mKp, mKv;
     Eigen::VectorXd mKpDefault, mKvDefault;
+
+
+    /// Loding BVH mapping from BVH file.
+    void loadBVHMap(const std::string& skeletonPath);
+
+    /// Initializing BVH.
+    void initBVH();
 
 };
 

@@ -56,7 +56,7 @@ public:
 
     void setMotion(double t);
     const Eigen::Vector3d& getRootCOM(){return mRootCOM;}
-    Eigen::Matrix3d get(const std::string& body_node);
+    Eigen::Matrix3d getBodyNodeRotation(const std::string& bodyNode);
 
     double getMaxTime(){return mNumTotalFrames*mTimeStep;}
     double getTimeStep(){return mTimeStep;}

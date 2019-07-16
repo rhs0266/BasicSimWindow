@@ -9,10 +9,13 @@
 
 using namespace std;
 using namespace Eigen;
+using namespace dart::dynamics;
 
 Character::Character(const std::string &skeletonPath) {
     this->mSkeleton = SkeletonBuilder::BuildFromFile(skeletonPath);
     this->mCharacterPath = skeletonPath;
+    this->loadBVHMap(skeletonPath);
+    bvh = BVH();
 }
 
 const dart::dynamics::SkeletonPtr &Character::getSkeleton() {
@@ -124,10 +127,15 @@ Eigen::VectorXd Character::GetSPDForces(const Eigen::VectorXd &pDesired, const E
     return tau;
 }
 
-void Character::loadBVHMap(const std::string &BVHPath) {
+void Character::loadBVH(const std::string& BVHPath){
+    bvh.parse(BVHPath);
+    initBVH();
+}
+
+void Character::loadBVHMap(const std::string &skeletonPath) {
     TiXmlDocument doc;
-    if (!doc.LoadFile(BVHPath)){
-        cout << "Can't open file: " << BVHPath << endl;
+    if (!doc.LoadFile(skeletonPath)){
+        cout << "Can't open file: " << skeletonPath << endl;
         return;
     }
 
@@ -143,17 +151,48 @@ void Character::loadBVHMap(const std::string &BVHPath) {
 
 }
 
-void Character::initBVH(BVH *bvh) {
+void Character::initBVH() {
     for (const auto ss: mBVHMap)
-        bvh->addMapping(ss.first, ss.second);
+        bvh.addMapping(ss.first, ss.second);
 }
 
-std::pair<Eigen::VectorXd, Eigen::VectorXd> Character::getTargetPosAndVelFromBVH(BVH *bvh, double t) {
+std::pair<Eigen::VectorXd, Eigen::VectorXd> Character::getTargetPosAndVelFromBVH(double t) {
     // TODO
     return std::pair<Eigen::VectorXd, Eigen::VectorXd>();
 }
 
-Eigen::VectorXd Character::getTargetPos(BVH *bvh, double t) {
-    // TODO
-    return Eigen::VectorXd();
+Eigen::VectorXd Character::getTargetPos(double t) {
+    int dof = this->mSkeleton->getNumDofs();
+    VectorXd p = VectorXd::Zero(dof);
+
+    // Set p
+    bvh.setMotion(t);
+    for (auto ss: mBVHMap){
+        BodyNode* bn = this->mSkeleton->getBodyNode(ss.first);
+        Matrix3d R = bvh.getBodyNodeRotation(ss.first);
+
+        Joint* jn = bn->getParentJoint();
+        Vector3d a = BallJoint::convertToPositions(R);
+        int jnIdx = jn->getIndexInSkeleton(0);
+
+        a = QuaternionToDARTPosition(DARTPositionToQuaternion(a));
+
+        if (dynamic_cast<BallJoint*>(jn) != nullptr || dynamic_cast<FreeJoint*>(jn) != nullptr){
+            p.block<3,1>(jnIdx,0) = a;
+        }else if (dynamic_cast<RevoluteJoint*>(jn) != nullptr) {
+            p[jnIdx] = a[0];
+            if (p[jnIdx] > M_PI)
+                p[jnIdx] -= 2 * M_PI;
+            else if (p[jnIdx] < -M_PI)
+                p[jnIdx] += 2 * M_PI;
+        }
+    }
+    p.block<3,1>(3,0) = bvh.getRootCOM();
+    return p;
+}
+
+void Character::followBVH(double t) {
+    while (t > bvh.getMaxTime())
+        t -= bvh.getMaxTime();
+    this->mSkeleton->setPositions(this->getTargetPos(t));
 }

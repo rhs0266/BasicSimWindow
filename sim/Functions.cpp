@@ -81,9 +81,24 @@ double radianClamp(double input){
 }
 
 Eigen::Quaterniond DARTPositionToQuaternion(Eigen::Vector3d in) {
-    return Eigen::Quaterniond();
+    if( in.norm() < 1e-8 ){
+        return Eigen::Quaterniond::Identity();
+    }
+    Eigen::AngleAxisd aa(in.norm(), in.normalized());
+    Eigen::Quaterniond q(aa);
+    QuaternionNormalize(q);
+    return q;
 }
 
 Eigen::Vector3d QuaternionToDARTPosition(const Eigen::Quaterniond &in) {
-    return Eigen::Vector3d();
+    Eigen::AngleAxisd aa(in);
+    double angle = aa.angle();
+    angle = std::fmod(angle+M_PI, 2*M_PI)-M_PI;
+    return angle*aa.axis();
+}
+
+void QuaternionNormalize(Eigen::Quaterniond& in){
+    if(in.w() < 0){
+        in.coeffs() *= -1;
+    }
 }

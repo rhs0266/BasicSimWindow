@@ -163,8 +163,8 @@ setMotion(double t) {
 
 Matrix3d
 BVH::
-get(const string& body_node) {
-    return mMap[body_node]->get();
+getBodyNodeRotation(const string& bodyNode) {
+    return mMap[bodyNode]->get();
 }
 
 void

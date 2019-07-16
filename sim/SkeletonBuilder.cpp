@@ -95,8 +95,6 @@ dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType,
 
     BodyNode *bn;
 
-    cout << size << endl;
-
     if (jointType == JOINT_TYPE::Free) {
         FreeJoint::Properties props;
         props.mName = bodyName;
@@ -131,7 +129,6 @@ dart::dynamics::BodyNode *SkeletonBuilder::MakeJoint(const JOINT_TYPE jointType,
         WeldJoint::Properties props;
         props.mName = bodyName;
         props.mT_ChildBodyToJoint = bodyPosition.inverse() * jointPosition;
-        cout << bodyPosition.inverse() * jointPosition * Vector3d(0,0,0) << endl;
         if (parent != nullptr)
             props.mT_ParentBodyToJoint = parent->getTransform().inverse() * jointPosition;
         bn = targetSkel->createJointAndBodyNodePair<WeldJoint>(parent, props,

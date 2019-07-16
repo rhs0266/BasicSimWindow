@@ -5,10 +5,12 @@
 #ifndef GUI_SIMWINDOW_HPP
 #define GUI_SIMWINDOW_HPP
 
+#include "../sim/Character.hpp"
 #include "GLUTWindow.hpp"
 #include "Camera.hpp"
 #include "GLPrimitiveFunctions.hpp"
 #include "dart/simulation/simulation.hpp"
+
 
 class SimWindow : public GUI::GLUTWindow{
 public:
@@ -52,6 +54,8 @@ private:
 
 	/// Timer event.
 	void timer(int value) override;
+
+	std::vector<Character> mCharacters;
 };
 
 
