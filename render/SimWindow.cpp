@@ -26,9 +26,6 @@ SimWindow::SimWindow() : GLUTWindow(), mIsRotate(true), mIsDrag(false), mIsPlay(
 	mWorld->setTime(1.0 / 1000.0);
 	mWorld->checkCollision();
 
-//	mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/humanoid.xml"));
-//    mWorld->addSkeleton(SkeletonBuilder::BuildFromFile("../character/ground.xml"));
-
     Character humanoid("../character/humanoid.xml");
     humanoid.loadBVH("../motion/cartwheel.bvh");
     mCharacters.emplace_back(humanoid);
@@ -50,8 +47,6 @@ void SimWindow::display() {
 
     glEnable(GL_BLEND);
 
-//    DrawSkeleton(humanoid->getSkeleton(), Vector3d(0.5, 1.0, 0.2));
-//    DrawSkeleton(mWorld->getSkeleton(1));
     for (auto& character : mCharacters){
         DrawSkeleton(character.getSkeleton());
     }
@@ -119,8 +114,7 @@ void SimWindow::reshape(int w, int h) {
 }
 
 void SimWindow::timer(int value) {
-    mWorld->step();
-    mCharacters[0].followBVH(mFrame * 0.0001);
+    mCharacters[0].followBVH(mFrame * 0.001 * 0.033);
     mFrame++;
 	glutPostRedisplay();
 	glutTimerFunc(mDisplayTimeout, timerEvent, 1);
